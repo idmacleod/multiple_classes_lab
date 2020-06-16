@@ -9,7 +9,7 @@ public class BusStopTest {
     
     @Before
     public void setUp(){
-        busStop = new busStop("Tranent High Street");
+        busStop = new BusStop("Tranent High Street");
         person = new Person();
     }
 
@@ -19,8 +19,16 @@ public class BusStopTest {
     }
 
     @Test
-    public void canAddPersonToQueue(){
+    public void canAddToQueue(){
         busStop.addToQueue(person);
+        assertEquals(1, busStop.getQueueLength());
+    }
+
+    @Test
+    public void canRemoveFromQueue(){
+        busStop.addToQueue(person);
+        busStop.addToQueue(person);
+        busStop.removeFromQueue();
         assertEquals(1, busStop.getQueueLength());
     }
 }

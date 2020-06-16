@@ -8,4 +8,16 @@ public class BusStop {
         this.name = name;
         this.queue = new ArrayList<Person>();
     }
+
+    public int getQueueLength() {
+        return this.queue.size();
+    }
+
+    public void addToQueue(Person person) {
+        this.queue.add(person);
+    }
+
+    public Person removeFromQueue() {
+        return this.queue.remove(0);
+    }
 }
