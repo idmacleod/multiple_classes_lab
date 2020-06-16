@@ -18,6 +18,10 @@ public class BusStop {
     }
 
     public Person removeFromQueue() {
-        return this.queue.remove(0);
+        if (this.getQueueLength() > 0) {
+            return this.queue.remove(0);
+        }
+        return null;
     }
 }
+
